@@ -25,5 +25,5 @@ Route::group([
     'namespace' => 'App\Api\Controllers',
 ], function ($router) {
     Route::post('/login','WechatController@login');
-    Route::get('/qa','ChatgptController@index');
+    Route::post('/qa','ChatgptController@index');
 });

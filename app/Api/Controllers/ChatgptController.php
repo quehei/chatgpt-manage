@@ -11,7 +11,10 @@ class ChatgptController extends Controller
     {
         $question = $request->input('q');
         $chatgpt = new Chatgpt();
-        return $chatgpt->getAnswer($question);
+        return response()->json([
+            'code' => 200,
+            'msg' => $chatgpt->getAnswer($question)
+        ]);
     }
 }
 ?>
