@@ -18,4 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login','\App\Api\Controllers\WechatController@login');
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'chatpgt',
+    'namespace' => 'App\Api\Controllers',
+], function ($router) {
+    Route::post('/login','WechatController@login');
+    Route::get('/qa','ChatgptController@index');
+});

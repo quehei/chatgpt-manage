@@ -212,4 +212,5 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'chatgpt_key' => env('CHATGPT_KEY'),
 ];
