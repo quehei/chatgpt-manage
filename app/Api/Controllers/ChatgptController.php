@@ -10,7 +10,6 @@ class ChatgptController extends Controller
     public function index(Request $request)
     {
         $question = $request->input('q');
-        return $question;
         $queue = "chatgpt_container";
         $status = $this->getContainerStatus($queue);
         if($status){
