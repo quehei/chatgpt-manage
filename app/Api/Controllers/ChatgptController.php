@@ -9,10 +9,11 @@ class ChatgptController extends Controller
 {
     public function index(Request $request)
     {
+        $question = $request->input('q');
+        return $question;
         $queue = "chatgpt_container";
-        $status = $this->getContainerStatus();
+        $status = $this->getContainerStatus($queue);
         if($status){
-            $question = $request->input('q');
             $chatgpt = new Chatgpt();
             return response()->json([
                 'code' => 200,
@@ -24,7 +25,6 @@ class ChatgptController extends Controller
                 'msg' => '服务器繁忙'
             ]);
         }
-       
     }
 
     public function getContainerStatus($queue = "chatgpt_container")
