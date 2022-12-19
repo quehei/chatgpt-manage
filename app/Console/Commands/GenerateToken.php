@@ -45,9 +45,6 @@ class GenerateToken extends Command
 
         for($i = 0;$i <= $exe_time;$i++){
             $add_number = $tokenBucket->add($token_num);
-            if($add_number == 0){
-                break;
-            } 
             echo '['.date('Y-m-d H:i:s').'] add token num:'.$add_number.PHP_EOL;
             sleep($time_sleep);
         }
