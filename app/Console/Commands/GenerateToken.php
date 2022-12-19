@@ -38,7 +38,7 @@ class GenerateToken extends Command
         $token_num = 10;
 
         //时间间隔
-        $time_sleep = 3;
+        $time_sleep = 20;
 
         //执行次数
         $exe_time = intval(60/$time_sleep);
